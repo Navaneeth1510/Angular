@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    margin: 0;
+    --bs-border-width : 3px;
+    /* background-color: linear-gradient(#,#); */
+    background: linear-gradient(to top, #9999ff 0%, #ff99cc 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    overflow: hidden;
+}

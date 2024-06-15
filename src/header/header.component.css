@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Fedoka+One:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&family=Poetsen+One&display=swap');
+.row{
+    background: #111a21;
+}
+.mind-mender{
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-style: bold;
+  font-style: normal;
+  font-size: 4rem !important;
+  background: -webkit-linear-gradient(#9999ff, #ff99cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+.drop{
+  background-color: #272727;
+  color: white;
+  border: 1px solid white;
+}
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0 ;
+  }
+  
+  .popover-arrow {
+    position: absolute;
+  }
+  
+  .tooltip {
+    position: absolute;
+  }
+  
+  .tooltip-arrow {
+    position: absolute;
+  }

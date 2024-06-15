@@ -1,0 +1,43 @@
+<div class="chat bg-dark text-white">
+    <app-header></app-header>
+    <div class="d-flex h-100">
+        <div class="col-3 p-0">
+            <div class="inside h-100 overflow-auto text-white p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2 mt-3">
+                    <button class="btn new rounded-4 border-0 fs-5 text-black"  (click)="startNewChat()">
+                        <img src="./../assets/plus.svg" alt="New Chat" class="me-2"> New Chat
+                    </button>
+                </div>
+                <div *ngIf="history.length > 0">
+                    <div *ngFor="let conversation of history; let i = index" class="d-flex justify-content-between align-items-center">
+                        <p class="cursor-pointer mb-0 fs-5 mt-2" (click)="loadConversation(i)"><strong>Conversation {{ i + 1 }}</strong></p>
+                        <img src="./../assets/trash-2.svg" alt="Delete" class="delete-icon cursor-pointer mt-2" (click)="deleteConversation(i)">
+                    </div>
+                </div>
+                <div *ngIf="history.length === 0" class="fs-5 mt-4">No history available</div>
+            </div>
+        </div>
+        <div class="col-9 d-flex interface flex-column h-100 fs-4">
+            <div class="chatint flex-grow-1 overflow-auto rounded-3 p-3">
+                <div class="messages">
+                    <div *ngFor="let message of currentConversation">
+                        <div [ngClass]="{'text-end': message.sender === 'user', 'text-start': message.sender === 'model'}">
+                            <span class="fs-6" [ngClass]="{'badge bg-primary': message.sender === 'user', 'badge bg-secondary': message.sender === 'model'}">
+                                {{ message.text }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat text-white rounded-5">
+                <div class="inputbar ms-4 my-auto input-group rounded-5 me-2 mb-5">
+                    <input type="text" class="border-0 form-control rounded-start-5 p-2" placeholder="Enter your prompt here"
+                        [(ngModel)]="inputText" (keyup.enter)="sendMessage()">
+                    <button class="input-group-text bg-primary rounded-end-5 border-0" (click)="sendMessage()">
+                        <img class="my-auto" src="./../assets/send.svg">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

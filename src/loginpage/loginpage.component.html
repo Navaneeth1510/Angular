@@ -1,0 +1,92 @@
+<div *ngIf="!login" class="container">
+    <div class="row mt-5 ">
+        <div class="col-4 mt-5 pb-5 mb-5">
+            <a href="http://localhost:4200/login"><img src="./../assets/MindMender_3.png" class="img-fluid" alt="Mind Mender Logo"></a>
+        </div>
+        <div class="col-7 border-start pt-3 ps-5">
+            <span class="fs-1 heading">𝓜𝓲𝓷𝓭 𝓜𝓮𝓷𝓭𝓮𝓻</span>
+            <p class="fs-6 ms-5">𝓣𝓱𝓮 𝓜𝓮𝓷𝓽𝓪𝓵 𝓗𝓮𝓪𝓵𝓽𝓱 𝓒𝓱𝓪𝓽𝓫𝓸𝓽</p>
+            <div *ngIf="mainpage" class="row mt-5">
+                <div class="col mt-5">
+                    <p>"𝖣𝗂𝗌𝖼𝗈𝗏𝖾𝗋 𝗍𝗁𝖾 𝗉𝖺𝗍𝗁 𝗍𝗈 𝖺 𝗁𝖾𝖺𝗅𝗍𝗁𝗂𝖾𝗋 𝗆𝗂𝗇𝖽 - 𝗒𝗈𝗎𝗋 𝗃𝗈𝗎𝗋𝗇𝖾𝗒 𝗍𝗈𝗐𝖺𝗋𝖽𝗌 𝖻𝖾𝗍𝗍𝖾𝗋 𝗆𝖾𝗇𝗍𝖺𝗅 𝗁𝖾𝖺𝗅𝗍𝗁 𝗌𝗍𝖺𝗋𝗍𝗌 𝗁𝖾𝗋𝖾."
+                    </p>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-8">
+                    </div>
+                    <div class="col-4 d-flex mt-5">
+                        <button type="button" class="btn btn-primary mt-3 ms-auto" (click)="showloginform()">Get Started ></button>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!mainpage">
+                <div *ngIf="signup">
+                    <div class="row">
+                        <div class="col-3">
+                        </div>
+                        <div class="col-6 mx-auto">
+                            <div class="card border d-flex rounded-4 w-100 align-center">
+                                <div class="p-1 text-center align-middle border-bottom fs-2" >
+                                    <span class="align-middle">Sign Up</span>
+                                </div>
+                                <div class="ms-auto border-bottom">
+                                    <form class="p-3 align-middle">
+                                        <label class="fs-5 me-3 ms-auto w-100"for="email">
+                                            E-Mail ID:<br>
+                                            <input [(ngModel)]="email_s" name="email_s" class="fs-6 col-sm-12 mt-1 form-control border-1 rounded-3" type="text" required>
+                                        </label>
+                                        <label class="fs-5 w-100 mt-2" for="password">
+                                            Password:<br>
+                                            <input [(ngModel)]="password_s" name="password_s" class="fs-6 col-sm-12 mt-1 form-control border-1 rounded-3" type="password" required>
+                                        </label>
+                                        <label class="fs-5 w-100 mt-2" for="password">
+                                            Confirm Password:<br>
+                                            <input [(ngModel)]="new_password" name="new_password" class="fs-6 col-sm-12 mt-1 form-control border-1 rounded-3" type="password" required>
+                                        </label>
+                                        <div class="d-flex">
+                                            <button type="submit" class="btn btn-primary w-50 mt-4 mx-auto" (click)="signupauth()">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="">
+                                    <p class="fs-6 text-center p-0">Already a user? <a  class="link-offset-2 link-underline link-underline-opacity-0"(click)="showloginform()">Login</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="loginform">
+                <div class="row">
+                    <div class="col-3">
+                    </div>
+                    <div class="col-6 mx-auto">
+                        <div class="card border d-flex rounded-4 w-100 align-center">
+                            <div class="p-1 text-center align-middle border-bottom fs-2">
+                                <span class="align-middle">Login</span>
+                            </div>
+                            <div class="ms-auto border-bottom">
+                                <form class="p-3 align-middle ngNativeValidate #form">
+                                    <label class="fs-5 me-3 ms-auto w-100" for="email">
+                                        E-Mail ID:<br>
+                                        <input [(ngModel)]="email" name="email" class=" form-control fs-6 col-sm-12 border-2 mt-1 rounded-3"  data-toggle="tooltip" data-bs-content="Enter your Email ID" type="text" required/>
+                                    </label>
+                                    <label class="fs-5 w-100 mt-2" for="password">
+                                        Password:<br>
+                                        <input [(ngModel)]="password" name="password" class="form-control fs-6 col-sm-12 mt-1 border-2 rounded-3" type="password" required/>
+                                    </label>
+                                    <div class="d-flex" >
+                                        <button type="submit" class="btn btn-primary w-50 mt-4 mx-auto submit" (click)="loginauth()">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="">
+                                <p class="fs-6 text-center p-0">No account? <a  class="link-offset-2 link-underline link-underline-opacity-0" (click)="showsignupform()">Sign Up</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

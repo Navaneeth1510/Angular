@@ -1,0 +1,51 @@
+<div class="w-100 mt-0">
+    <div class="row border-bottom">
+        <div class="col-3">
+            <p class="fs-1 mt-3 ms-3 mb-0 mind-mender fw-bolder">Mind Mender</p>
+        </div>
+        <div class="col-5"></div>
+        <div class="col-4 ms-0 d-flex mx-auto border-2 ms-auto">
+            <div class="dropdown my-auto p-1">
+                <button class="btn drop my-auto fs-6 px-4 py-2 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  About Us
+                </button>
+                <ul class="dropdown-menu bg-dark">
+                  <li><a class="dropdown-item text-light" href="#">Action</a></li>
+                  <li><a class="dropdown-item text-light" href="#">Another action</a></li>
+                  <li><a class="dropdown-item text-light" href="#">Something else here</a></li>
+                </ul>
+              </div>
+              <div class="dropdown my-auto ms-1">
+                <button class="btn drop my-auto  px-4 py-2 fs-6 p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Contact Us
+                </button>
+                <ul class="dropdown-menu bg-dark">
+                  <li><a class="dropdown-item text-light" href="#">Get in contact with us through</a></li>
+                  <li><a class="dropdown-item text-light" href="#">Email: navaneethnaren6&#64;gmail.com</a></li>
+                  <li><a class="dropdown-item text-light" href="#">Phone: +91 9148048521</a></li>
+                </ul>
+              </div>
+          
+            <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn drop fs-6 ms-2 my-auto p-0 px-4 py-2" type="button">Logout<img src="assets/log-out.svg" alt="Logout icon" class="my-auto ms-2 me-2" /></button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog text-light">
+      <div class="modal-content bg-dark">
+          <div class="modal-header">
+              <h1 class="modal-title fs-4" id="exampleModalLabel">Logout</h1>
+              <button type="button" class="btn-close h-25" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-5">
+              Are you sure you want to logout?
+          </div>
+          <div class="modal-footer p-1">
+              <button type="button" class="btn btn-secondary fs-6" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" (click)="logout()" class="btn btn-danger fs-6" data-bs-dismiss="modal">Logout</button>
+          </div>
+      </div>
+  </div>
+</div>
+
