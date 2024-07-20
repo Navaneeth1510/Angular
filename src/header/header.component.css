@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Fedoka+One:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Fedoka+One:wght@700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&family=Poetsen+One&display=swap');
 .row{
     background: #111a21;
+}
+.head{
+  border-color:-webkit-linear-gradient(#9999ff, #ff99cc) !important;
 }
 .mind-mender{
   font-family: "Dancing Script", cursive;

@@ -3,4 +3,26 @@ input::placeholder{
 }
 .card{
     background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+     /* background: -webkit-linear-gradient(#cc99ff, #ffccff) !important; */
+    /* background: -webkit-linear-gradient(#99ff99, #ff9966) !important; */
+    /* background: -webkit-linear-gradient(#6666ff, #ff6699) !important; */
+    /* background: -webkit-linear-gradient(#66cc99, #99ffcc) !important; */
+}
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container input {
+    width: 100%;
+    padding-right: 40px; 
+}
+
+.toggle-password-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
 }

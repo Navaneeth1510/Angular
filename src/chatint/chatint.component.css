@@ -3,6 +3,33 @@
   overflow: hidden;
 }
 
+.user-response-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.model-response-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.user-response, .model-response {
+  max-width: 75%;
+  word-wrap: break-word;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+.user-response {
+  background-color: #007bff;
+}
+
+.model-response {
+  background-color: #6c757d;
+  
+}
+
 .interface {
   background: black url("./../assets/MindMender_3_less.png") center center no-repeat;
   background-size: 25%;
@@ -12,11 +39,14 @@
 }
 
 .chatint {
-  overflow :hidden;
+  overflow: hidden;
   height: 73.8vh;
   width: 98%;
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
+}
+.chatint::-webkit-scrollbar {
+  display: none;
 }
 
 .inputbar {
@@ -26,10 +56,14 @@
 .inside::-webkit-scrollbar {
   display: none;
 }
+.inside::-webkit-scrollbar {
+  display: none;
+}
 
 .inside {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow: auto; 
 }
 
 .chat {
@@ -57,20 +91,6 @@
   font-size: 16px;
 }
 
-.messages span {
-  padding: 5px 10px;
-  border-radius: 10px;
-  margin-bottom: 5px;
-}
-
-.text-end span {
-  background-color: #007bff;
-}
-
-.text-start span {
-  background-color: #6c757d;
-}
-
 .input-group-text {
   background-color: #007bff;
   border: none;
@@ -91,7 +111,8 @@
 .form-control::placeholder {
   color: #999;
 }
-.new{
+
+.new {
   background: linear-gradient(to top, #9999ff 0%, #ff99cc 100%);
   color: black;
 }

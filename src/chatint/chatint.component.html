@@ -1,16 +1,16 @@
 <div class="chat bg-dark text-white">
     <app-header></app-header>
     <div class="d-flex h-100">
-        <div class="col-3 p-0">
+        <div class="col-3 p-0 border-end" style="border-color: #ff99cc !important;">
             <div class="inside h-100 overflow-auto text-white p-3">
                 <div class="d-flex justify-content-between align-items-center mb-2 mt-3">
-                    <button class="btn new rounded-4 border-0 fs-5 text-black"  (click)="startNewChat()">
+                    <button class="btn new rounded-4 border-0 fs-5 text-black" (click)="startNewChat()">
                         <img src="./../assets/plus.svg" alt="New Chat" class="me-2"> New Chat
                     </button>
                 </div>
                 <div *ngIf="history.length > 0">
                     <div *ngFor="let conversation of history; let i = index" class="d-flex justify-content-between align-items-center">
-                        <p class="cursor-pointer mb-0 fs-5 mt-2" (click)="loadConversation(i)"><strong>Conversation {{ i + 1 }}</strong></p>
+                        <p class="cursor-pointer mb-0 fs-5 mt-2" (click)="loadConversation(i)"><strong>Conversation {{ conversation.index }}</strong></p>
                         <img src="./../assets/trash-2.svg" alt="Delete" class="delete-icon cursor-pointer mt-2" (click)="deleteConversation(i)">
                     </div>
                 </div>
@@ -19,10 +19,10 @@
         </div>
         <div class="col-9 d-flex interface flex-column h-100 fs-4">
             <div class="chatint flex-grow-1 overflow-auto rounded-3 p-3">
-                <div class="messages">
+                <div class="messages overflow-hidden">
                     <div *ngFor="let message of currentConversation">
-                        <div [ngClass]="{'text-end': message.sender === 'user', 'text-start': message.sender === 'model'}">
-                            <span class="fs-6" [ngClass]="{'badge bg-primary': message.sender === 'user', 'badge bg-secondary': message.sender === 'model'}">
+                        <div [ngClass]="{'user-response-container': message.sender === 'user', 'model-response-container': message.sender === 'model'}">
+                            <span class="fs-6" [ngClass]="{'user-response': message.sender === 'user', 'model-response': message.sender === 'model'}">
                                 {{ message.text }}
                             </span>
                         </div>

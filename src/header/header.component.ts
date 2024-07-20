@@ -6,17 +6,18 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { LoginService } from '../../loginservice';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ChatintComponent, AppComponent, CommonModule], 
+  imports: [ChatintComponent, CommonModule], 
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent{
-  constructor(private router: Router) {}
+  constructor(private router: Router, private chat:ChatintComponent, private loginservice :LoginService) {}
   modalshow = false;
   logoutclick(){
     this.showmodal();
@@ -25,6 +26,8 @@ export class HeaderComponent{
     this.modalshow = true;
   }
   logout(){
+    this.chat.saveConversation();
+    this.loginservice.loginname='';
     this.router.navigate(['/Mind-mender']);
   }
 }
