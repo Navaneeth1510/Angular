@@ -22,8 +22,7 @@
                 <div class="messages overflow-hidden">
                     <div *ngFor="let message of currentConversation">
                         <div [ngClass]="{'user-response-container': message.sender === 'user', 'model-response-container': message.sender === 'model'}">
-                            <span class="fs-6" [ngClass]="{'user-response': message.sender === 'user', 'model-response': message.sender === 'model'}">
-                                {{ message.text }}
+                            <span class="fs-6" [ngClass]="{'user-response': message.sender === 'user', 'model-response': message.sender === 'model'}" [innerHTML]="message.text | newlineToBr">
                             </span>
                         </div>
                     </div>

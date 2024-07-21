@@ -6,7 +6,8 @@ import { HeaderComponent } from '../header/header.component';
 import { LoginpageComponent } from '../loginpage/loginpage.component';
 import { UserService } from '../services/userservice';
 import { LoginService } from '../../loginservice';
-import { firstValueFrom } from 'rxjs';
+// import { NewlineToBrPipe } from './newline-to-br.pipe';
+import { PipesModule } from './pipes.module';
 
 interface Message {
   text: string;
@@ -25,7 +26,7 @@ interface Conversation {
 @Component({
   selector: 'app-chatint',
   standalone: true,
-  imports: [FormsModule, CommonModule, HeaderComponent, LoginpageComponent, HttpClientModule],
+  imports: [FormsModule, CommonModule, HeaderComponent, LoginpageComponent, HttpClientModule, PipesModule],
   templateUrl: './chatint.component.html',
   styleUrls: ['./chatint.component.css']
 })

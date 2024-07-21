@@ -7,12 +7,14 @@ import { AppComponent } from '../app/app.component';
 import { LoginpageComponent } from '../loginpage/loginpage.component';
 import { ChatintComponent } from '../chatint/chatint.component';
 import { AppRoutingModule } from '../app/app.routes'; // Adjust the path as per your project structure
+import { PipesModule } from '../chatint/pipes.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginpageComponent,
-    ChatintComponent
+    ChatintComponent,
+    PipesModule
     // Add other components here
   ],
   imports: [
